@@ -81,6 +81,8 @@ namespace XCOM2ModLauncherNoSteam
         {
             if (!File.Exists(xcom2_install_loc_txtbx.Text + "\\Binaries\\Win64\\XCom2.exe"))
                 return;
+            if (!Directory.Exists(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods"))
+                Directory.CreateDirectory(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods");
             Process.Start(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods");
         }
 
