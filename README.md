@@ -17,7 +17,7 @@ If you find anything wrong leave an issue please. Pull requests are also welcome
 
 ## Running Mods
 
-1. Download the release build and put it somewhere
+1. Download the [release build](https://github.com/Jesse-Culver/NoSteamXCOM2ModLauncher/releases) and put it somewhere
 2. Launch the executable
 3. Click Browse and find your install location for XCOM 2 (e.g. D:\Games\XCOM2)
 4. Click "Refresh" and it will scan your mods folder
