@@ -26,8 +26,9 @@ namespace XCOM2ModLauncherNoSteam
         {
             if (!File.Exists(xcom2_install_loc_txtbx.Text + "\\Binaries\\Win64\\XCom2.exe"))
                 return;
-            
-            //modTable.Columns.Add("FilePath", typeof(string));
+            if (!Directory.Exists(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods"))
+                Directory.CreateDirectory(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods");
+
             xcom2_mods_clb.Items.Clear();
             string[] modlist = Directory.GetFiles(xcom2_install_loc_txtbx.Text, "*.XComMod", SearchOption.AllDirectories);
             foreach (var mod in modlist)
@@ -59,7 +60,7 @@ namespace XCOM2ModLauncherNoSteam
                 }
             }
 
-            // Delete the file and rewrite
+            // Delete the mod ini file and rewrite, this could be handled better via a direct rewrite I suppose
             if (File.Exists(location + fileName))
                 File.Delete(location + fileName);
 
