@@ -28,8 +28,9 @@ namespace XCOM2ModLauncherNoSteam
                 return;
             if (!Directory.Exists(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods"))
                 Directory.CreateDirectory(xcom2_install_loc_txtbx.Text + "\\XComGame\\Mods");
-
+            xcom2_mods_clb.DataSource = null;
             xcom2_mods_clb.Items.Clear();
+            modTable.Clear();
             string[] modlist = Directory.GetFiles(xcom2_install_loc_txtbx.Text, "*.XComMod", SearchOption.AllDirectories);
             foreach (var mod in modlist)
             {
